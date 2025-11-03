@@ -1,9 +1,0 @@
-__pycache__/
-*.pyc
-venv/
-.env/
-*.db
-static/uploads/
-.vscode/
-.idea/
-test.py
