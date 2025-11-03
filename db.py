@@ -10,6 +10,8 @@ class Database:
         self.cursor = self.connection.cursor()
         self.cursor.execute("CREATE TABLE IF NOT EXISTS items(id, desc, date, user)")
 
+
     def add_item(self):
         pass
 
+    
