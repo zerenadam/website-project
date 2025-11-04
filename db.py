@@ -51,8 +51,18 @@ class Database:
                             )
         self.connection.commit()
 
-    def approve_item(self):
-        pass
+    def approve_item(self, item_id):
+        self.cursor.execute("UPDATE items SET status='approved' WHERE id=?", (item_id,))
+        self.connection.commit()
 
-    def approve_claim(self):
-        pass
+    def approve_claim(self, claim_id):
+        self.cursor.execute("UPDATE claims SET status='approved' WHERE id=?", (claim_id,))
+        self.connection.commit()
+
+    def get_items(self, approved_only=False):
+
+        if approved_only:
+            self.cursor.execute("SELECT * FROM items WHERE status='approved'")
+        else:
+            self.cursor.execute("SELECT * FROM items")
+        return self.cursor.fetchall()
