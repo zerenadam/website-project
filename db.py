@@ -19,4 +19,12 @@ class Database:
                             )""")
         self.connection.commit()
 
-d = Database()
+    
+    def add_item(self, item, description, date, user):
+
+        self.cursor.execute("INSERT INTO items(item, description, date, user) VALUES (?, ?, ?, ?)",
+                            (item, description, date, user)
+                            )
+        self.connection.commit()
+
+    
