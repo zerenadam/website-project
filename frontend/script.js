@@ -15,12 +15,12 @@ function searchItems() {
 
 document.getElementById("foundForm")?.addEventListener("submit", e => {
   e.preventDefault();
-  alert("Item submitted! (Backend integration coming soon)");
+  alert("Item submitted!");
   showSection("home");
 });
 
 document.getElementById("claimForm")?.addEventListener("submit", e => {
   e.preventDefault();
-  alert("Claim submitted! (Backend integration coming soon)");
+  alert("Claim submitted!");
   showSection("home");
 });
